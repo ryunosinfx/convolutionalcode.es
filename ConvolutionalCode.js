@@ -572,8 +572,8 @@ export class ConvolutionalCode {
 		this.decoder = new VitDecoder(trellisConfig);
 	}
 	encode(u8a) {
-		console.log('encode u8a');
-		console.log(u8a);
+		// console.log('encode u8a');
+		// console.log(u8a);
 		const encoder = this.encoder;
 		const bitsList = [];
 		encoder.reset();
@@ -588,10 +588,10 @@ export class ConvolutionalCode {
 		}
 		const flatList = lastList.flat();
 		const flatListBits = bitsList.flat();
-		console.log(flatListBits.join(','));
-		console.log('encode flatList A:');
-		console.log(flatList);
-		console.log('encode flatList B encoder.codeWordBit:' + encoder.codeWordBit);
+		// console.log(flatListBits.join(','));
+		// console.log('encode flatList A:');
+		// console.log(flatList);
+		// console.log('encode flatList B encoder.codeWordBit:' + encoder.codeWordBit);
 		const count = u8a.length * encoder.codeWordBit;
 		const newU8a = new Uint8Array(count);
 		for (let i = 0; i < count; i++) {
@@ -610,7 +610,7 @@ export class ConvolutionalCode {
 		const decoder = this.decoder;
 		decoder.reset();
 		let bitsList = [];
-		console.log('decode A:' + Date.now());
+		// console.log('decode A:' + Date.now());
 		for (const uint8 of u8a) {
 			const bits = Util.getUint8BitList(uint8);
 			// bits.reverse();
@@ -622,9 +622,9 @@ export class ConvolutionalCode {
 		const codeWordBit = decoder.codeWordBit;
 		const count = Math.ceil(bitsLista.length / codeWordBit);
 		// const decordedBits = [];
-		console.log(bitsLista);
+		// console.log(bitsLista);
 		let lastOne = [];
-		console.log('decode B:' + Date.now() + '/codeWordBit:' + codeWordBit + '/count:' + count);
+		// console.log('decode B:' + Date.now() + '/codeWordBit:' + codeWordBit + '/count:' + count);
 		for (let i = 0; i < count; i++) {
 			const start = i * codeWordBit;
 			const end = start + codeWordBit;
@@ -633,18 +633,18 @@ export class ConvolutionalCode {
 			for (let j = 0; j < codeWordBit; j++) {
 				v += sub[j] << j;
 			}
-			console.log('decode C1:' + Date.now() + '/i:' + i + '/v:' + v + '/sub:' + sub.join(''));
+			// console.log('decode C1:' + Date.now() + '/i:' + i + '/v:' + v + '/sub:' + sub.join(''));
 			lastOne = decoder.addSection(v);
 			// console.log('decode c2:' + Date.now() + '/decordedBits[i] :' + lastOne);
 		}
-		console.log('decode D:' + Date.now());
+		// console.log('decode D:' + Date.now());
 		const countByte = Math.ceil(u8a.length / codeWordBit);
 		const flatList = lastOne;
 		const bitsLis = [];
-		console.log('decode flatList A:');
-		console.log(flatList.join(','));
-		console.log(flatList);
-		console.log('decode flatList B:');
+		// console.log('decode flatList A:');
+		// console.log(flatList.join(','));
+		// console.log(flatList);
+		// console.log('decode flatList B:');
 		const newU8a = new Uint8Array(countByte);
 		for (let i = 0; i < countByte; i++) {
 			const start = i * 8;
@@ -658,9 +658,9 @@ export class ConvolutionalCode {
 			}
 			newU8a[i] = v;
 		}
-		console.log(bitsLis.join(','));
-		console.log(newU8a);
-		console.log('decode F:' + Date.now());
+		// console.log(bitsLis.join(','));
+		// console.log(newU8a);
+		// console.log('decode F:' + Date.now());
 		return newU8a;
 	}
 }

@@ -15,7 +15,7 @@ class Main {
 		const decodeResultElm = V.gid('decode-result');
 
 		const func = () => {
-			const conf = bitNumElm.value === 2 ? BitLength2 : CodifEsempioLibro540;
+			const conf = bitNumElm.value * 1 === 2 ? BitLength2 : CodifEsempioLibro540;
 			this.ConvolutionalCode = new ConvolutionalCode(conf);
 			const value = encodeInpueElm.value;
 			const u8a = B64Util.s2u8a(value);
