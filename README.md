@@ -39,11 +39,6 @@ import { ConvolutionalCode, BitLength2, CodifEsempioLibro540 } from './Convoluti
   const convolutionalCode = new ConvolutionalCode(config);
   const decodedUint8Array 
     = ReedSolomonES.decode(encordedUint8Array, presetName, errorCrrectionReduntantRetio);
-  
-  // Strict mode:if errors are correctable,they are corrected.
-  // But errors are not correctable,throw ReedSolomonException.
-  const correctedUint8Array 
-    = convolutionalCode.decodeStrict(encordedUint8Array);
-
+    
 </script>
 
