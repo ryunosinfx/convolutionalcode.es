@@ -1,6 +1,6 @@
 {
   "name": "convolutionalcode.es",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is encoder decoder for trellis based convolutional codes ported from acorbe/convEncoder written in Java.",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryunosinfx/reedsolomon.es.git"
+    "url": "git+https://github.com/ryunosinfx/convolutionalcode.es.git"
   },
   "keywords": [
-    "reedsolomon",
-    "reed-solomon",
+    "convolutionalcode",
     "error correction"
   ],
   "author": "ryunosinfx <ryunosinfxxul@gmail.com> (https://github.com/ryunosinfx)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryunosinfx/reedsolomon.es/issues"
+    "url": "https://github.com/ryunosinfx/convolutionalcode.es/issues"
   },
-  "homepage": "https://github.com/ryunosinfx/reedsolomon.es#readme",
+  "homepage": "https://github.com/ryunosinfx/convolutionalcode.es#readme",
   "devDependencies": {
     "webpack": "^5.13.0",
     "webpack-cli": "^3.3.12",
