@@ -40,7 +40,7 @@ import { ConvolutionalCode, BitLength2, CodifEsempioLibro540 } from './Convoluti
   const decodedUint8Array = convolutionalCode.decode(encordedUint8Array);
     
 </script>
-
+```
 
 ## Licence
 
