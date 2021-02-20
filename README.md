@@ -37,8 +37,11 @@ import { ConvolutionalCode, BitLength2, CodifEsempioLibro540 } from './Convoluti
   const encordedUint8Array = new Uint8Array([yyyyyyyyyyyyyyyyyyyyyyy]); 
 
   const convolutionalCode = new ConvolutionalCode(config);
-  const decodedUint8Array 
-    = ReedSolomonES.decode(encordedUint8Array, presetName, errorCrrectionReduntantRetio);
+  const decodedUint8Array = convolutionalCode.decode(encordedUint8Array);
     
 </script>
 
+
+## Licence
+
+MIT
